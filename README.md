@@ -11,14 +11,14 @@ Asegúrate de tener instalado Git en tu sistema.
 Para obtener una copia del proyecto en tu máquina local, abre una terminal y ejecuta el siguiente comando:
 
 ``` bash
-git clone https://github.com/tuUsuario/ai-raab.git
+git clone https://github.com/tuUsuario/AIRAAB.git
 ```
 
 ## Acceder al Directorio del Proyecto
 Después de clonar el repositorio, accede al directorio del proyecto:
 
 ``` bash
-cd ai-raab
+cd AIRAAB
 ```
 
 ## Abrir el Proyecto
