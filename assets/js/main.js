@@ -162,7 +162,7 @@ $(function () {
     $('.brand-active').slick({
         dots: false,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         arrows: false,
         speed: 1000,
@@ -299,7 +299,7 @@ $(function () {
     $('.project-2-active').slick({
         dots: true,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         arrows: false,
         speed: 1000,
