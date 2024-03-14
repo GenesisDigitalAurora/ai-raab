@@ -4950,6 +4950,9 @@ p {
   margin: 10px auto 0 auto;
 }
 
+.news-area .news-item .news-content a.text-content {
+  min-height: 250px;
+}
 .news-area .news-item .news-content a {
   font-size: 20px;
   color: #69747c;
