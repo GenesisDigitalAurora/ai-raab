@@ -431,13 +431,13 @@ $(function () {
 
     //===== Odometer js
 
-    $('.odometer').appear(function (e) {
-        var odo = $(".odometer");
-        odo.each(function () {
-            var countNumber = $(this).attr("data-count");
-            $(this).html(countNumber);
-        });
-    });
+    // $('.odometer').appear(function (e) {
+    //     var odo = $(".odometer");
+    //     odo.each(function () {
+    //         var countNumber = $(this).attr("data-count");
+    //         $(this).html(countNumber);
+    //     });
+    // });
 
 
 
