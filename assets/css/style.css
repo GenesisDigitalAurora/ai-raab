@@ -2706,7 +2706,7 @@ p {
   top: 0;
   height: 100%;
   width: 41%;
-  background-image: url(../images/buildings-thumb.png);
+  background-image: url(../images/buildings-thumb.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3182,7 +3182,7 @@ p {
   bottom: 0;
   height: 370px;
   width: 100%;
-  background-image: url(../images/news-bg-2.png);
+  background-image: url(../images/news-bg-2.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -4858,7 +4858,7 @@ p {
   bottom: 0;
   height: 30%;
   width: 100%;
-  background-image: url(../images/news-bg.png);
+  background-image: url(../images/news-bg.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -6757,7 +6757,7 @@ p {
   top: 0;
   height: 100%;
   width: 50%;
-  background-image: url(../images/relationships-bg.jpg);
+  background-image: url(../images/relationships-bg.webp);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -7468,7 +7468,7 @@ p {
   top: 0;
   height: 100%;
   min-width: 930px;
-  background-image: url(../images/AIRaab_Nosotros_MisionVision.jpg);
+  background-image: url(../images/AIRaab_Nosotros_MisionVision.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -7746,7 +7746,7 @@ p {
   bottom: 0;
   height: 310px;
   width: 100%;
-  background-image: url(../images/news-bg-3.png);
+  background-image: url(../images/news-bg-3.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
