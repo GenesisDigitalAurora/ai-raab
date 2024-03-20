@@ -5,9 +5,9 @@ $(function () {
 
     //===== Prealoder
 
-    if ($('.preloader').length) {
-        $('.preloader').fadeOut();
-    }
+    // if ($('.preloader').length) {
+    //     $('.preloader').fadeOut();
+    // }
 
 
 
