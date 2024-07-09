@@ -292,7 +292,25 @@ $(function () {
     });
 
 
-
+    $('#SelectLanguage').change(function() {
+        console.log('Language changed');
+        var selectedLanguage = this.value;
+        var currentUrl = window.location.href;
+        var urlParts = currentUrl.split('/');
+        var fileName = urlParts.pop();
+        var domain = urlParts.join('/');
+        
+        if (selectedLanguage === 'en') {
+            if (!currentUrl.includes('/en/')) {
+                window.location.href = domain + '/en/' + fileName;
+            }
+        } else if (selectedLanguage === 'es') {
+            if (currentUrl.includes('/en/')) {
+                var newUrl = currentUrl.replace('/en/', '/');
+                window.location.href = newUrl;
+            }
+        }
+    });
 
 
     //===== feedback slide slick slider
