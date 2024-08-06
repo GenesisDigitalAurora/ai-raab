@@ -301,16 +301,26 @@ $(function () {
         var domain = urlParts.join('/');
         
         if (selectedLanguage === 'en') {
+            // Check if the URL does not already contain '/en/' and adjust the URL correctly for subfolders
             if (!currentUrl.includes('/en/')) {
-                window.location.href = domain + '/en/' + fileName;
+                if (urlParts[urlParts.length - 1] === 'products') {
+                    // If current URL is in the 'products' subfolder, insert '/en/' before 'products'
+                    var newUrl = domain.replace('/products', '/en/products') + '/' + fileName;
+                    window.location.href = newUrl;
+                } else {
+                    // For other cases, just append '/en/' to the domain
+                    window.location.href = domain + '/en/' + fileName;
+                }
             }
         } else if (selectedLanguage === 'es') {
+            // Check if the URL contains '/en/' and adjust the URL correctly for Spanish
             if (currentUrl.includes('/en/')) {
                 var newUrl = currentUrl.replace('/en/', '/');
                 window.location.href = newUrl;
             }
         }
     });
+    
 
 
     //===== feedback slide slick slider

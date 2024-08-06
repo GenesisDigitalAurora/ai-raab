@@ -4,7 +4,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
         $name = strip_tags(trim($_POST["name"]));
-                $name = str_replace(array("\r","\n"),array(" "," "),$name);
+        $name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $number = trim($_POST["number"]);
         $company = trim($_POST["company"]);
@@ -20,10 +20,10 @@
 
         // Set the recipient email address.
         // FIXME: Update this to your desired email address.
-        $recipient = "contact@ai-raab.com";
+        $recipient = "contacto@ai-raab.com";
 
         // Set the email company.
-        $company = "New contact from $name";
+        $company = "Nuevo contacto de $name";
 
         // Build the email content.
         $email_content = "Your name: $name\n";
