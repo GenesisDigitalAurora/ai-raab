@@ -1,8 +1,5 @@
 <?php
 
-$mail->SMTPDebug = 2; // Mostrar el debug del SMTP (puede ser 2 para detalles más específicos)
-$mail->Debugoutput = 'html'; // Para ver el debug en formato HTML
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -44,18 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); 
-            var f = d.getElementsByTagName(s)[0], 
-            j = d.createElement(s), 
-            dl = l != 'dataLayer' ? '&l=' + l : ''; 
-            j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-52694J44');
-    </script>
-    <!-- End Google Tag Manager -->
-</head>
+    </head>
     <body style='font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
@@ -96,18 +82,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $mail = new PHPMailer(true);
-        // Configuración del servidor SMTP de GoDaddy
-        $mail->isSMTP();
-        $mail->Host = 'smtpout.secureserver.net'; // Cambia esto por tu servidor SMTP (GoDaddy)
-        $mail->SMTPAuth = true;
-        $mail->Username = 'contacto@ai-raab.com'; // Cambia esto por tu correo electrónico
-        $mail->Password = '4IR44b?Auto-m4triz.'; // Cambia esto por tu contraseña
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+        $mail->IsSMTP(); // Using SMTP.
+        $mail->SMTPAuth = false; // Enables SMTP authentication.
+        $mail->Host = "localhost"; // GoDaddy support said to use localhost
+        $mail->Port = 25;
+        $mail->SMTPSecure = 'none';
+
+        //havent read yet, but this made it work just fine
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
 
         // Configuración del correo
-        $mail->setFrom($email, 'Solicitud de Cotización');
-        $mail->addAddress($recipient);
+        $mail->setFrom($recipient, 'Solicitud de Cotización');
+        $mail->addAddress($recipient, 'AIRAAB');
 
         $mail->Subject = $subject;
         $mail->Body = $email_content;
