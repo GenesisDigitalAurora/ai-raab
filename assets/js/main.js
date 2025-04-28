@@ -10,6 +10,18 @@ $(function () {
     // }
 
 
+    const logoImg = document.getElementById("logoRotativo");
+    let current = 0;
+
+    setInterval(() => {
+    logoImg.style.opacity = 0; // Fade out
+
+    setTimeout(() => {
+        current = (current + 1) % logos.length;
+        logoImg.src = logos[current];
+        logoImg.style.opacity = 1; // Fade in
+    }, 1000); // Wait for fade out to complete
+    }, 3000);
 
 
     //===== Sticky
