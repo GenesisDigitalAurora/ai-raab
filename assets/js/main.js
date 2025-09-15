@@ -5,11 +5,23 @@ $(function () {
 
     //===== Prealoder
 
-    if ($('.preloader').length) {
-        $('.preloader').fadeOut();
-    }
+    // if ($('.preloader').length) {
+    //     $('.preloader').fadeOut();
+    // }
 
 
+    const logoImg = document.getElementById("logoRotativo");
+    let current = 0;
+
+    setInterval(() => {
+    logoImg.style.opacity = 0; // Fade out
+
+    setTimeout(() => {
+        current = (current + 1) % logos.length;
+        logoImg.src = logos[current];
+        logoImg.style.opacity = 1; // Fade in
+    }, 1000); // Wait for fade out to complete
+    }, 3000);
 
 
     //===== Sticky
@@ -162,7 +174,7 @@ $(function () {
     $('.brand-active').slick({
         dots: false,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         arrows: false,
         speed: 1000,
@@ -292,14 +304,42 @@ $(function () {
     });
 
 
-
+    $('#SelectLanguage').change(function() {
+        console.log('Language changed');
+        var selectedLanguage = this.value;
+        var currentUrl = window.location.href;
+        var urlParts = currentUrl.split('/');
+        var fileName = urlParts.pop();
+        var domain = urlParts.join('/');
+        
+        if (selectedLanguage === 'en') {
+            // Check if the URL does not already contain '/en/' and adjust the URL correctly for subfolders
+            if (!currentUrl.includes('/en/')) {
+                if (urlParts[urlParts.length - 1] === 'products') {
+                    // If current URL is in the 'products' subfolder, insert '/en/' before 'products'
+                    var newUrl = domain.replace('/products', '/en/products') + '/' + fileName;
+                    window.location.href = newUrl;
+                } else {
+                    // For other cases, just append '/en/' to the domain
+                    window.location.href = domain + '/en/' + fileName;
+                }
+            }
+        } else if (selectedLanguage === 'es') {
+            // Check if the URL contains '/en/' and adjust the URL correctly for Spanish
+            if (currentUrl.includes('/en/')) {
+                var newUrl = currentUrl.replace('/en/', '/');
+                window.location.href = newUrl;
+            }
+        }
+    });
+    
 
 
     //===== feedback slide slick slider
     $('.project-2-active').slick({
         dots: true,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         arrows: false,
         speed: 1000,
@@ -392,20 +432,20 @@ $(function () {
 
     //====== Magnific Popup
 
-    $('.video-popup').magnificPopup({
-        type: 'iframe'
-        // other options
-    });
+    // $('.video-popup').magnificPopup({
+    //     type: 'iframe'
+    //     // other options
+    // });
 
 
     //===== Magnific Popup
 
-    $('.image-popup').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
+    // $('.image-popup').magnificPopup({
+    //     type: 'image',
+    //     gallery: {
+    //         enabled: true
+    //     }
+    // });
 
 
     //===== niceSelect js
@@ -415,29 +455,29 @@ $(function () {
 
 
 
-    if ($('.wow').length) {
-        var wow = new WOW({
-            boxClass: 'wow', // animated element css class (default is wow)
-            animateClass: 'animated', // animation css class (default is animated)
-            offset: 150, // distance to the element when triggering the animation (default is 0)
-            mobile: true, // trigger animations on mobile devices (default is true)
-            live: true // act on asynchronously loaded content (default is true)
-        });
-        wow.init();
-    }
+    // if ($('.wow').length) {
+    //     var wow = new WOW({
+    //         boxClass: 'wow', // animated element css class (default is wow)
+    //         animateClass: 'animated', // animation css class (default is animated)
+    //         offset: 150, // distance to the element when triggering the animation (default is 0)
+    //         mobile: true, // trigger animations on mobile devices (default is true)
+    //         live: true // act on asynchronously loaded content (default is true)
+    //     });
+    //     wow.init();
+    // }
 
 
 
 
     //===== Odometer js
 
-    $('.odometer').appear(function (e) {
-        var odo = $(".odometer");
-        odo.each(function () {
-            var countNumber = $(this).attr("data-count");
-            $(this).html(countNumber);
-        });
-    });
+    // $('.odometer').appear(function (e) {
+    //     var odo = $(".odometer");
+    //     odo.each(function () {
+    //         var countNumber = $(this).attr("data-count");
+    //         $(this).html(countNumber);
+    //     });
+    // });
 
 
 

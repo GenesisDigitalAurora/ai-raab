@@ -1,0 +1,14 @@
+{
+    "name": "geodi/services",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.0"
+    },
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Geodi\\Services\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

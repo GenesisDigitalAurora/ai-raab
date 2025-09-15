@@ -1,0 +1,19 @@
+
+User-agent: *
+Disallow: /vendor/
+Disallow: /composer/
+Disallow: /phpmailer/
+
+# Permitir el acceso completo al resto del sitio
+Allow: /
+
+# Reforzar indexación rápida
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap en español
+Sitemap: https://www.ai-raab.com/sitemap.xml
+
+# Sitemap en inglés (si lo tienes separado)
+Sitemap: https://www.ai-raab.com/en/sitemap.xml
