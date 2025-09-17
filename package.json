@@ -1,0 +1,11 @@
+{
+  "name": "airaab-website",
+  "version": "1.0.0",
+  "description": "Website for AIRaab",
+  "scripts": {
+    "minify-css": "cleancss --output assets/css/style.minify.css assets/css/style.css"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3"
+  }
+}
