@@ -5987,6 +5987,9 @@ p {
   background: #000;
   z-index: 10;
 }
+.footer-area .container{
+  max-width: 80%;
+}
 
 .footer-area .footer-copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
